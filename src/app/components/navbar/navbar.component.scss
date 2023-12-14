@@ -1,0 +1,25 @@
+.navbar-light .navbar-brand {
+    color: var(--whiteColor);
+    text-transform: uppercase;
+    line-height: 10px;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 600;
+    img {
+        height: 2.5rem;
+        // width: 100%;
+        // vertical-align: top;
+    }
+    span {
+        padding-left: 0.5rem;
+        color: var(--mainColor);
+        line-height: 10px;
+        text-transform: lowercase;
+        transition: var(--transition);
+        font-size: 40px;
+        font-weight: 700;
+    }
+}

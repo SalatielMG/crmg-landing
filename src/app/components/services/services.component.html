@@ -1,0 +1,15 @@
+<div id="services" class="services-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Nuestros <span>Servicios</span></h2>
+            <p>Tenemos una gran variedad de servicios, consultelos y no dudes en solicitar mas información.</p>
+        </div>
+        <div class="row justify-content-center">
+            <ng-container *ngFor="let service of services">
+                <app-service
+                    [service]="service"
+                ></app-service>
+            </ng-container>
+        </div>
+    </div>
+</div>
