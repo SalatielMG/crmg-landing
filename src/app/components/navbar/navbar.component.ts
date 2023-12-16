@@ -1,6 +1,8 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Inject } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
+import { ENVIRONMENT } from 'src/app/core/environment/environment.token';
+import { EnvironmentInterface } from 'src/app/core/environment/environment.interface';
 
 @Component({
     selector: 'app-navbar',
@@ -11,7 +13,9 @@ export class NavbarComponent implements OnInit {
 
     constructor(
         private viewportScroller: ViewportScroller,
-        private _router: Router
+        private _router: Router,
+        @Inject(ENVIRONMENT)
+        private readonly _environment: EnvironmentInterface
     ) {}
 
     // Navbar Sticky
@@ -31,7 +35,7 @@ export class NavbarComponent implements OnInit {
     }
 
     public redirectSingIn() {
-        this._router.navigate(['/private/dashboard']);
+        this._router.navigate([this._environment.redirectSingIn]);
     }
 
     ngOnInit() {}
