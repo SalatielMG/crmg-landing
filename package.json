@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
+    "start:local": "ng serve -c=local --port 5200",
+    "start:local-hotspot": "ng serve -c=local-hotspot --port 5201",
+    "start:prod": "ng serve -c=prod --port 5202",
+    "build:local": "ng build -c=local",
+    "build:local-hotspot": "ng build -c=local-hotspot",
+    "build:prod": "ng build -c=prod",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",

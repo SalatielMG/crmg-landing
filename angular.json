@@ -45,7 +45,7 @@
             "namedChunks": true
           },
           "configurations": {
-            "production": {
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -72,8 +72,40 @@
                   "maximumError": "2mb"
                 }
               ]
+            },
+            "local": {
+              "aot": false,
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": false,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
+            },
+            "local-hotspot": {
+              "aot": true,
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.hotspot.ts"
+                }
+              ]
             }
-          }
+          },
+          "defaultConfiguration": "local"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -81,10 +113,17 @@
             "browserTarget": "crmg:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "crmg:build:production"
+            "prod": {
+              "browserTarget": "crmg:build:prod"
+            },
+            "local": {
+              "browserTarget": "crmg:build:local"
+            },
+            "local-hotspot": {
+              "browserTarget": "crmg:build:local-hotspot"
             }
-          }
+          },
+          "defaultConfiguration": "local"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
