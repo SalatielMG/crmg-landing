@@ -7,5 +7,5 @@ export interface EnvironmentInterface extends EnvironmentInitInterface {
     whatsappShare: string;
     emailContact: string;
     whatsappMessage: string;
-    redirectSingIn: string;
+    redirectUrlSingIn: string;
 }
