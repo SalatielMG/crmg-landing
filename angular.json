@@ -73,6 +73,34 @@
                 }
               ]
             },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ],
+              "aot": true,
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "outputHashing": "all",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
+                }
+              ]
+            },
             "local": {
               "aot": false,
               "optimization": false,
@@ -127,6 +155,9 @@
           "configurations": {
             "prod": {
               "browserTarget": "crmg:build:prod"
+            },
+            "test": {
+              "browserTarget": "crmg:build:test"
             },
             "local": {
               "browserTarget": "crmg:build:local"
