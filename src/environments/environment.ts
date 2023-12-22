@@ -2,8 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+import { EnvironmentInitInterface } from "src/app/core/environment/environment.interface";
+
+export const environment: EnvironmentInitInterface = {
+  production: false,
+  urlFetch: 'assets/env/environment.json'
 };
 
 /*

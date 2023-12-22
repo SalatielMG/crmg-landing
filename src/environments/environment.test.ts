@@ -2,5 +2,5 @@ import { EnvironmentInitInterface } from "src/app/core/environment/environment.i
 
 export const environment: EnvironmentInitInterface = {
   production: true,
-  urlFetch: 'assets/env/environment.prod.json'
+  urlFetch: 'assets/env/environment.test.json'
 };

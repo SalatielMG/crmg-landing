@@ -1,6 +1,6 @@
 import { EnvironmentInitInterface } from "src/app/core/environment/environment.interface";
 
 export const environment: EnvironmentInitInterface = {
-  production: true,
-  urlFetch: 'assets/env/environment.prod.json'
+  production: false,
+  urlFetch: 'assets/env/environment.local.json'
 };

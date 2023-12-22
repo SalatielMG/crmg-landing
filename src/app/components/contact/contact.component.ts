@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
-// import { EnvironmentInterface } from '@app/shared/interfaces/environment.token.interface';
-// import { ENVIRONMENT } from '@app/shared/tokens/environment.token';
+import { ENVIRONMENT } from 'src/app/core/environment/environment.token';
+import { EnvironmentInterface } from 'src/app/core/environment/environment.interface';
 
 @Component({
     selector: 'app-contact',
@@ -10,12 +10,12 @@ import { ViewportScroller } from '@angular/common';
 })
 export class ContactComponent implements OnInit {
 
-    // public whatsappShare = this._environment.whatsappShare;
+    public whatsappShare = this._environment.whatsappShare;
 
     constructor(
         private viewportScroller: ViewportScroller,
-        // @Inject(ENVIRONMENT)
-        // private readonly _environment: EnvironmentInterface
+        @Inject(ENVIRONMENT)
+        private readonly _environment: EnvironmentInterface
     ) {}
 
     public onClick(elementId: string): void { 
@@ -38,25 +38,23 @@ export class ContactComponent implements OnInit {
     }
 
     get emailContact() {
-        return '';
-        // if (!this._environment.emailContact) {
-        //     return '';
-        // }
-        // return this._environment.emailContact;
+        if (!this._environment.emailContact) {
+            return '';
+        }
+        return this._environment.emailContact;
     }
 
     get whatsappNumber() {
-        return '';
-        // if (!this.whatsappShare) {
-        //     return '';
-        // }
-        // return `(+${this.whatsappShare.slice(0, 2)}) ${this.whatsappShare.slice(3, this.whatsappShare.length)}`;
+        if (!this.whatsappShare) {
+            return '';
+        }
+        return `(+${this.whatsappShare.slice(0, 2)}) ${this.whatsappShare.slice(3, this.whatsappShare.length)}`;
     }
 
     public shareWhatsapp = () => {
-        // if (this.whatsappShare) {
-        //     window.open(`https://wa.me/${this.whatsappShare}?text=Hola necesito mas información, esto interesado en su servicio. Gracias`);
-        // }
+        if (this.whatsappShare) {
+            window.open(`https://wa.me/${this.whatsappShare}?text=${this._environment.whatsappMessage}`);
+        }
     }
 
     public mailTo = () => {
