@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -15,8 +15,6 @@ export class LandingHomeComponent {
         private viewportScroller: ViewportScroller
     )
     {}
-
-    
 
     homeSlides: OwlOptions = {
 		loop: true,
