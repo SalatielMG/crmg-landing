@@ -30,6 +30,8 @@ import { PartnerComponent } from './components/partner/partner.component';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ServiceComponent } from './components/service/service.component';
+import { ServiceSuspendedComponent } from './components/service-suspended/service-suspended.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
     declarations: [
@@ -56,7 +58,9 @@ import { ServiceComponent } from './components/service/service.component';
         PartnerComponent,
         SubscribeComponent,
         ContactComponent,
-        ServiceComponent
+        ServiceComponent,
+        ServiceSuspendedComponent,
+        LayoutComponent
     ],
     imports: [
         BrowserModule,
